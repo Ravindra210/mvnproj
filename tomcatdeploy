@@ -20,8 +20,6 @@ node{
     sshagent(['private']) {
      sh 'ssh -o StrictHostKeyChecking=no target/*.war root@http://52.90.63.216:8080/opt/apache-tomcat-8.5.35/webapps'
   }
-}
-
     stage('Deploy-Stage'){
         
         sh "${M2_HOME}/bin/mvn deploy"
