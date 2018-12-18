@@ -15,7 +15,10 @@ node{
         
         sh "${M2_HOME}/bin/mvn install"
     }
-    
+    stage('Deploy-Stage'){
+        
+        sh "${M2_HOME}/bin/mvn deploy"
+    }
     
     stage('Deploy-Stage-Tomcat'){
       sshagent(['private']) {
